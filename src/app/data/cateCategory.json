@@ -1,0 +1,28 @@
+
+[
+    {
+        "id":3,
+        "kind":10,
+        "category":"中式快餐"
+    },
+    {
+        "id":4,
+        "kind":10,
+        "category":"港式餐厅"
+    },
+    {
+        "id":5,
+        "kind":10,
+        "category":"面包甜品"
+    },
+    {
+        "id":7,
+        "kind":10,
+        "category":"美味小吃"
+    },
+    {
+        "id":12,
+        "kind":10,
+        "category":"精品火锅"
+    }
+]

@@ -1,0 +1,44 @@
+[
+	{
+		"name" : "新浪",
+		"url" : "http://www.sina.com.cn",
+		"logo1" : "sina_logo.png",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "淘宝",
+		"url" : "http://www.taobao.com",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "QQ",
+		"url" : "http://www.qq.com",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "搜狐",
+		"url" : "http://www.sohu.com",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "上海热线",
+		"url" : "http://www.online.sh.com",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "上海金山",
+		"url" : "http://www.js.sh.org",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	},
+	{
+		"name" : "凤凰网",
+		"url" : "http://www.ifeng.com",
+		"logo1" : "",
+		"logo2" : "sina_logo.png"
+	}
+]

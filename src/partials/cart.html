@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-md-8">      
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    购物明细
+                </h6>
+            </div>   
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="item in cart.cartItems">          
+                        <div class="panel panel-info"> 
+                            <div class="panel-heading">
+                                <h6 class="panel-title">
+                                    {{item.content}}<span class="Pleft8">价格:</span><strong>{{item.price}}</strong>元/{{item.unit}}
+                                    <button type="button" class="btn btn-primary btn-xs cart-del" ng-click="cart.remove(item)">删除</button>  
+                                </h6>
+                            </div>
+                            <div class="panel-body">
+                                <div class="pic">
+                                    <img ng-if="item.logo1" ng-src="app/img/{{item.userid}}/{{item.logo1}}" alt="{{item.content}}"/>
+                                    <img ng-if="!item.logo1" ng-src="app/img/logo1.png" alt="{{item.content}}"/>
+                                </div>
+                                <div class="text">
+                                    <span class="hidden-xs">{{item.content}}</span>
+                                    <p><span class="cart-qty">
+                                            <a class="less" ng-click="cart.less(item)">-</a>
+                                            <span class="badge">{{item.qty}}</span>
+                                            <a class="more" ng-click="cart.more(item)">+</a>
+                                            <span class="Pleft8 Pright8"><strong>{{item.amts}}元</strong></span>
+                                        </span>
+                                    </p>
+                                    <span class="hidden-xs">说明:{{item.spec}}</span>
+                                    <p></p>
+                                </div> 
+                                <p>
+                                    <input type="text" class="form-control"  ng-model="item.remark" placeholder="备注"/>
+                                </p>
+                            </div>
+                    </li> 
+                    <li class="active">
+                        <form name="form" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="phone" class="col-sm-2 control-label">手机</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="phone" 
+                                           placeholder="请输入手机号码" ng-model="cart.phone" required="true"/>
+                                    <a id="phonePopover" href="javascript:void(0);" type="button" data-container="body" 
+                                       data-toggle="popover" data-content="手机号码格式错误"  data-placement="bottom" />
+                                </div>
+                                <label for="contacter" class="col-sm-2 control-label">联系人</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="contacter" 
+                                           placeholder="请输入联系人" ng-model="cart.contacter" required="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="address" class="col-sm-2 control-label">地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="address" 
+                                           placeholder="请输入送货或上门地址" ng-model="cart.address" required="true"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="recdate" class="col-sm-2 control-label">预约日期</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="recdate" datepicker select="updateDate(date)"
+                                           placeholder="预约日期" ng-model="$parent.currentDate" required="true"/>
+                                </div>
+                                <label for="rechour" class="col-sm-2 control-label">预约时间</label>
+                                <div class="col-sm-2 text-center">
+                                    <input type="text" class=" form-control" id="rechour" style="text-align: right;"
+                                           placeholder="小时" ng-model="cart.rechour" required="true"/>                                      
+                                </div>
+                                <label class="col-sm-1 control-label" style="text-align: left;">点</label>
+                                <div class="col-sm-2 text-center">
+                                    <input type="text" class="form-control" id="recmin" style="text-align: right;"
+                                           placeholder="分钟" ng-model="cart.recmin" required="true"/>
+                                </div>
+                                <label class="col-sm-1 control-label" style="text-align: left;">分</label>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <h4 class="text-primary text-right">商品{{cart.totalAmts| currency}}元</h4>
+                                    <h4 class="text-primary text-right">送货{{cart.freight| currency}}元</h4>
+                                    <button type="button" class="btn btn-success btn-default right" ng-disabled="cart.unSubmit(form.$invalid);" ng-click="cart.submit();">提交</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <hr>
+        广告承租!
+    </div>           
+</div>

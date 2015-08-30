@@ -1,0 +1,239 @@
+<div class="container">
+    <div id="main">
+        <div class="row">
+            <div class="span9">
+                <!-- 商家信息-->
+                <div class="properties-rows">
+                    <div class="row">
+                        <div class="image span2">
+                            <a class="thumbnail">
+                                <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}"
+                                     alt="{{store.name}}">
+                                <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
+                            </a>
+                        </div>
+                        <div class="body span7">
+                            <h3>
+                                <span class="Pleft8">
+                                    <strong>{{store.name}}</strong>
+                                </span>
+                                <small class="Pleft8">地区:{{store.town}} 地址:{{store.address}}</small>
+                            </h3>
+                            <h4 class="Pleft8">
+                                <span class="content-stars-rank content-stars-{{store.hot}}"></span>
+                                <small>人均：<strong>{{store.pcc}}</strong>元</small>
+                                <small ng-if="store.freightfree" class="Pleft8 text-primary">{{store.freightfree}}元起免送货费
+                                    不足每单加收<strong>{{store.freight}}元</strong></small>
+                            </h4>
+                            <h5 class="Pleft8">
+                                <span class="text-info">营业时间:{{store.opentime}}-{{store.closetime}}</span>
+                                <span ng-if="store.phone" class="Pleft8  hidden-xs">电话:{{store.phone}}</span><span
+                                ng-if="store.contacter" class="Pleft8  hidden-xs">联系人:{{store.contacter}}</span>
+                            </h5>
+                            <h6 ng-if="store.action">活动:{{store.action}}</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.properties-rows -->
+                <!-- 分类筛选-->
+                <div class="properties-rows" ng-if="store.itemcategory">
+                    <div class="filter" ng-controller="FilterController" style="margin-bottom: 20px;">
+                        <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                            <h5>
+                                <ul>
+                                    <li class="title"><a class="text-primary">类别</a></li>
+                                    <li ng-repeat="f in store.itemcategory">
+                                        <a ng-click="addFilterCategory(f.category);">{{f.category}}</a>
+                                    </li>
+                                </ul>
+                            </h5>
+                        </div>
+                        <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                            <h5>
+                                <ul>
+                                    <li class="title"><a class="text-primary">已筛选</a></li>
+                                    <li ng-repeat="f in doFilter.filters">
+                                        <a class="filters" ng-click="removeFilter(f);">{{f.value}}<i></i></a>
+                                    </li>
+                                </ul>
+                            </h5>
+                        </div>
+                    </div>
+                    <!-- /.filter -->
+                </div>
+                <!-- /.properties-rows -->
+                <!-- 商品列表-->
+                <div class="properties-rows">
+                    <div class="row">
+                        <div class="property span9" ng-repeat="item in store.content  | filter: doFilter.filterDetail">
+                            <div class="row">
+                                <div class="image span2">
+                                    <div class="content">
+                                        <img ng-if="item.logo1" ng-src="app/img/{{store.userid}}/{{item.logo1}}"
+                                             alt="{{item.itemdesc}}"/>
+                                        <img ng-if="!item.logo1" ng-src="app/img/{{store.category}}.png"
+                                             alt="{{item.itemdesc}}"/>
+                                    </div>
+                                    <!-- /.content -->
+                                </div>
+                                <!-- /.image -->
+                                <div class="body span7">
+                                    <div class="title-price row">
+                                        <div class="title span4">
+                                            <h2><a href="#">{{item.itemdesc}}</a></h2>
+                                        </div>
+                                        <!-- /.title -->
+                                        <div class="price">
+                                            <strong>{{item.price}}</strong>元/{{item.unit}}
+                                        </div>
+                                        <!-- /.price -->
+                                    </div>
+                                    <!-- /.title -->
+                                    <div class="location">
+                                        <span class="content-stars-rank content-stars-{{item.hot}}"></span>
+                                    </div>
+                                    <!-- /.location -->
+                                    <p><span>特色:</span>{{item.itemspec}}
+                                        <button type="button" class="btn btn-primary btn-xs cart-add"
+                                                ng-click="cart.add(item, store.freightfree, store.freight)">我要
+                                        </button>
+                                    </p>
+                                </div>
+                                <!-- /.body -->
+                            </div>
+                            <!-- /.property -->
+                        </div>
+                        <!-- /.row -->
+
+                    </div>
+                    <!-- /.rows -->
+                </div>
+                <!-- /.properties-rows -->
+            </div>
+            <div class="sidebar span3">
+                <!-- 购物车-->
+                <div class="widget">
+                    <div class="navbar-header">
+                        <h2>我的美食<span class="badge">{{cart.totalQty}}</span></h2>
+                    </div>
+                    <div id="cart-detail" class="navbar-toggle">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <button type="button" class="btn btn-warning btn-xs cart-clear"
+                                        ng-disabled="cart.isEmpty()"
+                                        ng-click="cart.clear()">清除
+                                </button>
+                                <a>详细内容</a>
+                            </li>
+                            <li class="cart-content" ng-repeat="item in cart.cartItems">
+                                <h6>
+                                    {{item.content}}{{item.price}}元/{{item.unit}}
+                                    <span class="cart-qty hidden-tablet">
+                                        <button class="cart-del  btn-danger btn-small"
+                                                ng-click="cart.remove(item)">删除
+                                        </button>
+                                        <a class="less" ng-click="cart.less(item)">-</a>
+                                        <span class="badge">{{item.qty}}</span>
+                                        <a class="more" ng-click="cart.more(item)">+</a>
+                                    </span>
+                                </h6>
+                            </li>
+                            <li class="active">
+                                <button type="button" class="btn btn-success btn-xs cart-submit"
+                                        ng-disabled="cart.isEmpty()"
+                                        ng-click="goto('cart')">提交
+                                </button>
+                                <a>共{{cart.totalAmts| currency}}元</a>
+                            </li>
+                        </ul>
+                        <h5 class="text-primary text-center">{{store.freightfree}}元起免送货费
+                            不足每单加收<strong>{{store.freight}}元</strong></h5>
+                    </div>
+                </div>
+                <!-- /.cart-->
+                <!-- 商铺广告-->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="app/img/slider-0.jpg" alt="First slide"/>
+                        </div>
+                        <div class="item">
+                            <img src="app/img/slider-1.jpg" alt="Second slide"/>
+                        </div>
+                        <div class="item">
+                            <img src="app/img/slider-2.jpg" alt="Third slide"/>
+                        </div>
+                        <div class="item">
+                            <img src="app/img/slider-3.jpg" alt="Third slide"/>
+                        </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="javascript:void(0);"
+                       onclick="$('#myCarousel').carousel('prev');">&lsaquo;</a>
+                    <a class="carousel-control right" href="javascript:void(0);"
+                       onclick="$('#myCarousel').carousel('next');">&rsaquo;</a>
+                </div>
+                <!-- /.carousel-->
+                <div class="widget our-agents">
+                    <div class="title">
+                        <h2>Our Agents</h2>
+                    </div>
+                    <!-- /.title -->
+                    <div class="content">
+                        <div class="agent">
+                            <div class="image">
+                                <img src="img/photos/emma-small.png" alt="">
+                            </div>
+                            <!-- /.image -->
+                            <div class="name">Victoria Summer</div>
+                            <!-- /.name -->
+                            <div class="phone">333-666-777</div>
+                            <!-- /.phone -->
+                            <div class="email"><a href="mailto:victoria@example.com">victoria@example.com</a></div>
+                            <!-- /.email -->
+                        </div>
+                        <!-- /.agent -->
+                        <div class="agent">
+                            <div class="image">
+                                <img src="img/photos/john-small.png" alt="">
+                            </div>
+                            <!-- /.image -->
+                            <div class="name">John Doe</div>
+                            <!-- /.name -->
+                            <div class="phone">111-222-333</div>
+                            <!-- /.phone -->
+                            <div class="email"><a href="mailto:john.doe@example.com">victoria@example.com</a></div>
+                            <!-- /.email -->
+                        </div>
+                        <!-- /.agent -->
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.our-agents -->
+                <div class="ad widget">
+                    <h2>Advertisements</h2>
+
+                    <div class="content">
+                        <a href="#"><img src="img/banner/1.gif" alt="Banner"></a>
+                        <a href="#"><img src="img/banner/2.gif" alt="Banner"></a>
+                        <a href="#"><img src="img/banner/3.gif" alt="Banner"></a>
+                        <a href="#"><img src="img/banner/4.gif" alt="Banner"></a>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.ad -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

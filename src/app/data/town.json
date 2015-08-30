@@ -1,0 +1,43 @@
+
+[
+    {
+        "id":1,
+        "area":"石化",
+        "storecount":2
+    },
+    {
+        "id":2,
+        "area":"朱泾",
+        "storecount":4
+    },
+    {
+        "id":3,
+        "area":"枫泾",
+        "storecount":1
+    },
+    {
+        "id":4,
+        "area":"亭林",
+        "storecount":0
+    },
+    {
+        "id":5,
+        "area":"吕巷",
+        "storecount":1
+    },
+    {
+        "id":7,
+        "area":"廊下",
+        "storecount":1
+    },
+    {
+        "id":6,
+        "area":"干巷",
+        "storecount":1
+    },
+    {
+        "id":8,
+        "area":"新农",
+        "storecount":1
+    }
+]

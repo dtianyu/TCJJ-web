@@ -1,0 +1,29 @@
+
+[
+    {
+        "id":1018,
+        "userid":23,
+        "name":"金锣冷鲜肉城中路店",
+        "kind":32,
+        "classname":"fresh",
+        "address":"上海市朱泾镇城中路66号",
+        "contacter":"顾女士",
+        "phone":"13901739561",
+        "town":"朱泾",
+        "category":"肉类",
+        "pcc":0.00,
+        "freightfree":99.00,
+        "freight":5.00,
+        "feature":"",
+        "action":"",
+        "logo1":"",
+        "logo2":"JINLUO_meitu_1.jpg",
+        "hot":4,
+        "idx":0,
+        "itemcount":11,
+        "opentime":"06:30",
+        "closetime":"18:30",
+        "openremark":"",
+        "closeremark":null
+    }
+]

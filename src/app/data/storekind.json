@@ -1,0 +1,31 @@
+
+[
+    {
+        "id":10,
+        "name":"美食外卖",
+        "storecount":4,
+        "title":"金山生活-搜罗金山美食",
+        "classname":"cate"
+    },
+    {
+        "id":20,
+        "name":"同城服务",
+        "storecount":9,
+        "title":"找人帮忙-上金山生活",
+        "classname":"help"
+    },
+    {
+        "id":30,
+        "name":"教育培训",
+        "storecount":0,
+        "title":null,
+        "classname":"training"
+    },
+    {
+        "id":32,
+        "name":"生鲜水果",
+        "storecount":1,
+        "title":"金山生活-丰富你的生活",
+        "classname":"fresh"
+    }
+]

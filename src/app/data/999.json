@@ -1,0 +1,20 @@
+
+{
+    "id":999,
+    "userid":1,
+    "name":"诺云电脑",
+    "kind":20,
+    "address":"金山区朱泾镇南圩路94号",
+    "contacter":"先生",
+    "phone":"57327187",
+    "town":"朱泾",
+    "category":"电脑维修",
+    "pcc":0.00,
+    "feature":"笔记本维修",
+    "action":"买电脑送包包",
+    "logo1":"",
+    "logo2":"",
+    "hot":4,
+    "idx":0,
+    "itemcount":0
+}

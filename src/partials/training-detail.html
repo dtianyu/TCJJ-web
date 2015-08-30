@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}" alt="{{store.name}}">
+                    <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
+                </a>
+            </div>
+            <div class="col-sm-6 col-md-9">
+                <h4>
+                    <span class="Pleft8">
+                        <strong>{{store.name}}</strong>
+                    </span>
+                    <small class="Pleft8">地区:{{store.town}}  地址:{{store.address}}</small>
+                </h4>
+                <h4 class="Pleft8">
+                    <span class="content-stars-rank content-stars-{{store.hot}}"></span>
+                    <small>人均：<strong>{{store.pcc}}</strong>元</small>
+                </h4>
+                <h5 class="Pleft8 hidden-xs">
+                    <span class="text-info">开发时间:{{store.opentime}}-{{store.closetime}}</span><span ng-if="store.phone" class="Pleft8 hidden-xs">电话:{{store.phone}}</span><span ng-if="store.contacter" class="Pleft8 hidden-xs">联系人:{{store.contacter}}</span>
+                </h5>
+                <h6 ng-if="store.action">活动:{{store.action}}</h6>
+            </div>
+        </div>
+        <ul>
+            <li ng-repeat="item in store.content">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">
+                            <span class="Pleft8">
+                                <a><strong>{{item.itemdesc}}</strong></a>
+                            </span>
+                            <span class="content-stars-rank content-stars-{{item.hot}}"></span>
+                        </h6>
+                    </div>
+                    <div class="panel-body">
+                        <div class="pic">
+                            <img ng-if="item.logo1" ng-src="app/img/{{store.userid}}/{{item.logo1}}" alt="{{item.itemdesc}}"/>
+                            <img ng-if="!item.logo1" ng-src="app/img/{{store.category}}.png" alt="{{item.itemdesc}}"/>
+                        </div>
+                        <div class="text">
+                            <p><span>价格:</span><strong>{{item.price}}</strong>元/{{item.unit}}
+                                <button type="button" class="btn btn-primary btn-xs cart-add" ng-click="cart.add(item, store.freightfree, store.freight)">学习</button>
+                            </p>
+                            <p><span>说明:</span>{{item.itemspec}}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <div class="nav  nav-pills">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#cart-detail">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="cart-logo"></i>我的课程<span class="badge">{{cart.totalQty}}</span></a>
+            </div>
+            <div id ="cart-detail" class="navbar-toggle">
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><button type="button" class="btn  btn-xs cart-clear" ng-disabled="cart.isEmpty()" ng-click="cart.clear()">清除</button><a>详细内容</a></li>
+                    <li class="cart-content" ng-repeat="item in cart.cartItems">
+                        <h5>{{item.content}} {{item.price}}元/{{item.unit}}
+                            <span class="cart-qty">
+                                <button type="button" class="btn btn-primary btn-xs cart-del" ng-click="cart.remove(item)">删除</button>
+                                <a class="less" ng-click="cart.less(item)">-</a>
+                                <span class="badge">{{item.qty}}</span>
+                                <a class="more" ng-click="cart.more(item)">+</a>
+                            </span>
+                        </h5>
+                    </li>
+                    <li class="active">
+                        <button type="button" class="btn btn-success btn-xs cart-submit" ng-disabled="cart.isEmpty()" ng-click="goto('cart')">提交</button>
+                        <a>共{{cart.totalAmts| currency}}元</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="hidden-xs">
+            <div qrcode class="text-center"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="row">
+    <div class="col-md-9 col-sm-6">  
+        <div class="filter" ng-controller="FilterController" style="margin-bottom: 20px;">
+            <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">                   
+                <ul>
+                    <li class="title"><a class="text-primary">搜索</a></li>
+                    <li><input style="width: 400px;" ng-model="doFilter.searchText"/></li>
+                    <li class="text-primary" style="float: right;padding-right: 20px;">排序<small>
+                            <input type="radio" ng-model="orderProp" value="idx" class="orderProp"/>人气
+                            <input type="radio" ng-model="orderProp" value="pcc" class="orderProp"/>人均消费
+                            <input type="radio" ng-model="orderProp" value="itemdesc" class="orderProp"/>名称
+                        </small>
+                    </li>
+                </ul> 
+            </div>
+            <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">                  
+                <ul>
+                    <li class="title"><a class="text-primary">地区</a></li>
+                    <li  ng-repeat="f in  town">
+                        <a ng-click="addFilterTown(f.area);">{{f.area}}<span class="text-info">({{f.storecount}})</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">                  
+                <ul>
+                    <li class="title"><a class="text-primary">类别</a></li>
+                    <li  ng-repeat="f in category">
+                        <a ng-click="addFilterCategory(f.category);">{{f.category}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                <ul>
+                    <li class="title"><a class="text-primary">已筛选</a></li>
+                    <li  ng-repeat="f in doFilter.filters">
+                        <a class="filters" ng-click="removeFilter(f);">{{f.value}}<i></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h6 class="panel-title">
+                    <span class="title">金山生活-丰富你的生活</span>
+                </h6>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="store in stores| filter: doFilter.filterDetail| filter:doFilter.searchText | orderBy:orderProp" style="float: left;padding: 2px;">
+                        <div class="profile">
+                            <div class="thumbnail">
+                                <a href="#/cate/{{store.id}}">
+                                    <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}" alt="{{store.name}}">
+                                    <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
+                                </a>
+                            </div>
+                            <div class="caption">
+                                <h5> 
+                                    <a href="#/cate/{{store.id}}">{{store.name}}</a><span class="title" ng-if="store.pcc">人均:<strong>{{store.pcc}}</strong>元</span>                             
+                                </h5>
+                                <p>  
+                                    <span class="content-stars-rank content-stars-{{store.hot}}"></span>
+                                </p>
+                                <h6 class="title">地区:<strong>{{store.town}}</strong><strong>{{store.phone}}</strong></h6>   
+                                <h6 class="title">特色:<span>{{store.feature}}</span></h6>
+                                <span class="label label-primary title">{{store.action}}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <ul class="nav nav-pills nav-stacked" ng-controller="StoreKindController">
+            <li class="active">
+                <a href="#">
+                    首页
+                </a>
+            </li>
+            <li ng-repeat="k in storekind">
+                <a href="#/{{k.classname}}">{{k.name}}<span class="badge pull-right">{{k.storecount}}</span></a>
+            </li>
+        </ul>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>   
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/slider-0.jpg" alt="First slide"/>
+                </div>
+                <div class="item">
+                    <img src="img/slider-1.jpg" alt="Second slide"/>
+                </div>
+                <div class="item">
+                    <img src="img/slider-2.jpg" alt="Third slide"/>
+                </div>
+                <div class="item">
+                    <img src="img/slider-3.jpg" alt="Third slide"/>
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="javascript:void(0);" onclick="$('#myCarousel').carousel('prev');">&lsaquo;</a>
+            <a class="carousel-control right" href="javascript:void(0);" onclick="$('#myCarousel').carousel('next');">&rsaquo;</a>
+        </div>
+        <div class="hidden-xs">
+            <div qrcode class="text-center"></div>
+        </div>
+        <hr>
+        广告承租!
+    </div>
+</div>

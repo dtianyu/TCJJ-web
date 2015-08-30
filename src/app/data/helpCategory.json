@@ -1,0 +1,23 @@
+
+[
+    {
+        "id":1,
+        "kind":20,
+        "category":"电脑维修"
+    },
+    {
+        "id":2,
+        "kind":20,
+        "category":"家电维修"
+    },
+    {
+        "id":6,
+        "kind":20,
+        "category":"电脑销售"
+    },
+    {
+        "id":8,
+        "kind":20,
+        "category":"监控门禁"
+    }
+]
