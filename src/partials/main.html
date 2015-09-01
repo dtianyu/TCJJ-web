@@ -1,150 +1,183 @@
-<div class="map-wrapper">
-    <div class="map">
-        <div id="map" class="map-inner"></div>
-        <!-- /.map-inner -->
-
-        <div class="container">
-            <div class="row">
-                <div class="span3">
-                    <div class="property-filter pull-right">
-                        <div class="content">
-                            <form method="get" action="?">
-                                <div class="location control-group">
-                                    <label class="control-label" for="inputLocation">
-                                        Location
-                                    </label>
-
-                                    <div class="controls">
-                                        <select id="inputLocation">
-                                            <option id="malibu">Malibu, CA</option>
-                                            <option id="palo-alto">Palo Alto, CA</option>
-                                        </select>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="type control-group">
-                                    <label class="control-label" for="inputType">
-                                        Type
-                                    </label>
-
-                                    <div class="controls">
-                                        <select id="inputType">
-                                            <option id="apartment">Apartment</option>
-                                            <option id="condo">Condo</option>
-                                        </select>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="beds control-group">
-                                    <label class="control-label" for="inputBeds">
-                                        Beds
-                                    </label>
-
-                                    <div class="controls">
-                                        <select id="inputBeds">
-                                            <option id="11">1</option>
-                                            <option id="21">2</option>
-                                        </select>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="baths control-group">
-                                    <label class="control-label" for="inputBaths">
-                                        Baths
-                                    </label>
-
-                                    <div class="controls">
-                                        <select id="inputBaths">
-                                            <option id="1">1</option>
-                                            <option id="2">2</option>
-                                        </select>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-
-                                <div class="rent control-group">
-                                    <div class="controls">
-                                        <label class="checkbox" for="inputRent">
-                                            <input type="checkbox" id="inputRent"> Rent
-                                        </label>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="sale control-group">
-                                    <div class="controls">
-                                        <label class="checkbox" for="inputSale">
-                                            <input type="checkbox" id="inputSale"> Sale
-                                        </label>
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="price-from control-group">
-                                    <label class="control-label" for="inputPriceFrom">
-                                        Price from
-                                    </label>
-
-                                    <div class="controls">
-                                        <input type="text" id="inputPriceFrom" name="inputPriceFrom">
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-
-                                <div class="price-to control-group">
-                                    <label class="control-label" for="inputPriceTo">
-                                        Price to
-                                    </label>
-
-                                    <div class="controls">
-                                        <input type="text" id="inputPriceTo" name="inputPriceTo">
-                                    </div>
-                                    <!-- /.controls -->
-                                </div>
-                                <!-- /.control-group -->
-                                <div class="price-value">
-                                    <span class="from"></span><!-- /.from -->
-                                    -
-                                    <span class="to"></span><!-- /.to -->
-                                </div>
-                                <!-- /.price-value -->
-
-                                <div class="price-slider">
-                                </div>
-                                <!-- /.price-slider -->
-                                <div class="form-actions">
-                                    <input type="submit" value="Filter now!"
-                                           class="btn btn-primary btn-large">
-                                </div>
-                                <!-- /.form-actions -->
-                            </form>
-                        </div>
-                        <!-- /.content -->
-                    </div>
-                    <!-- /.property-filter -->
-                </div>
-                <!-- /.span3 -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-    </div>
-    <!-- /.map -->
-</div>
-<!-- /.map-wrapper -->
 <div class="container">
     <div id="main">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <div class="slider-inner">
+                    <div class="row">
+                        <div class="images span9">
+
+                            <div id="myCarousel" class="carousel slide iosSlider">
+                                <!-- 轮播（Carousel）指标 -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                </ol>
+                                <!-- 轮播（Carousel）项目 -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="app/img/TCJJ_Home_1.png" alt="First slide"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="img/tmp/property-large-2.jpg" alt="Second slide"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="app/img/slider-2.jpg" alt="Third slide"/>
+                                    </div>
+                                    <div class="item">
+                                        <img src="app/img/slider-3.jpg" alt="Third slide"/>
+                                    </div>
+                                </div>
+                                <!-- 轮播（Carousel）导航 -->
+                                <a class="carousel-control left" href="javascript:void(0);"
+                                   onclick="$('#myCarousel').carousel('prev');">&lsaquo;</a>
+                                <a class="carousel-control right" href="javascript:void(0);"
+                                   onclick="$('#myCarousel').carousel('next');">&rsaquo;</a>
+                            </div>
+
+                        </div>
+                        <!-- /.images -->
+                        <div class="span3">
+                            <div class="property-filter">
+                                <div class="content">
+                                    <form method="get" action="?">
+                                        <div class="location control-group">
+                                            <label class="control-label" for="inputLocation">
+                                                Location
+                                            </label>
+
+                                            <div class="controls">
+                                                <select id="inputLocation">
+                                                    <option id="malibu">Malibu, CA</option>
+                                                    <option id="palo-alto">Palo Alto, CA</option>
+                                                </select>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="type control-group">
+                                            <label class="control-label" for="inputType">
+                                                Type
+                                            </label>
+
+                                            <div class="controls">
+                                                <select id="inputType">
+                                                    <option id="apartment">Apartment</option>
+                                                    <option id="condo">Condo</option>
+                                                </select>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="beds control-group">
+                                            <label class="control-label" for="inputBeds">
+                                                Beds
+                                            </label>
+
+                                            <div class="controls">
+                                                <select id="inputBeds">
+                                                    <option id="1">1</option>
+                                                    <option id="2">2</option>
+                                                </select>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="baths control-group">
+                                            <label class="control-label" for="inputBaths">
+                                                Baths
+                                            </label>
+
+                                            <div class="controls">
+                                                <select id="inputBaths">
+                                                    <option id="11">1</option>
+                                                    <option id="22">2</option>
+                                                </select>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+
+                                        <div class="rent control-group">
+                                            <div class="controls">
+                                                <label class="checkbox" for="inputRent">
+                                                    <input type="checkbox" id="inputRent"> Rent
+                                                </label>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="sale control-group">
+                                            <div class="controls">
+                                                <label class="checkbox" for="inputSale">
+                                                    <input type="checkbox" id="inputSale"> Sale
+                                                </label>
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="price-from control-group">
+                                            <label class="control-label" for="inputPriceFrom">
+                                                Price from
+                                            </label>
+
+                                            <div class="controls">
+                                                <input type="text" id="inputPriceFrom" name="inputPriceFrom">
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="price-to control-group">
+                                            <label class="control-label" for="inputPriceTo">
+                                                Price to
+                                            </label>
+
+                                            <div class="controls">
+                                                <input type="text" id="inputPriceTo" name="inputPriceTo">
+                                            </div>
+                                            <!-- /.controls -->
+                                        </div>
+                                        <!-- /.control-group -->
+
+                                        <div class="price-value">
+                                            <span class="from"></span><!-- /.from -->
+                                            -
+                                            <span class="to"></span><!-- /.to -->
+                                        </div>
+                                        <!-- /.price-value -->
+
+                                        <div class="price-slider">
+                                        </div>
+                                        <!-- /.price-slider -->
+
+                                        <div class="form-actions">
+                                            <input type="submit" value="Filter now!" class="btn btn-primary btn-large">
+                                        </div>
+                                        <!-- /.form-actions -->
+                                    </form>
+                                </div>
+                                <!-- /.content -->
+                            </div>
+                            <!-- /.property-filter -->
+
+                        </div>
+                        <!-- /.span3 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.slider-inner -->
+            </div>
+            <!-- /.slider -->
+        </div>
+        <!-- /.slider-wrapper -->
         <div class="row">
             <div class="span9">
                 <h1 class="page-header">最受欢迎 Favorite</h1>
@@ -404,80 +437,6 @@
             <!-- /.content -->
         </div>
         <!-- /#help .carousel -->
-        <div id="training" class="carousel">
-            <h2 class="page-header">教育培训 Training<a href="#/training" style="float: right">More...</a></h2>
-
-            <div class="content">
-                <a class="carousel-prev" href="#/training">Previous</a>
-                <a class="carousel-next" href="#/training">Next</a>
-                <ul>
-                    <li carousel role="training" ng-repeat="store in trainingstores">
-                        <div class="image">
-                            <a href="#/training/{{store.id}}"></a>
-                            <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}"
-                                 alt="{{store.name}}">
-                            <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
-                        </div>
-                        <!-- /.image -->
-                        <div class="title">
-                            <h3><a href="#/training/{{store.id}}">{{store.name}}</a>&nbsp;&nbsp;<span
-                                class="content-stars-rank content-stars-{{store.hot}}"></span></h3>
-                        </div>
-                        <!-- /.title -->
-                        <div class="location">
-                            地区:{{store.town}}<span class="value">&nbsp;&nbsp;电话:{{store.phone}}</span></h5>
-                        </div>
-                        <!-- /.location-->
-                        <div class="feature">
-                            <span class="key">专长:</span>
-                            <span class="value">{{store.feature}}</span>
-                        </div>
-                        <!-- /.feature -->
-                    </li>
-                </ul>
-            </div>
-            <!-- /.content -->
-        </div>
-        <!-- /#training .carousel -->
-        <div id="fresh" class="carousel">
-            <h2 class="page-header">生鲜水果 Fresh<a href="#/fresh" style="float: right">More...</a></h2>
-
-            <div class="content">
-                <a class="carousel-prev" href="#/fresh">Previous</a>
-                <a class="carousel-next" href="#/fresh">Next</a>
-                <ul>
-                    <li carousel role="fresh" ng-repeat="store in freshstores">
-                        <div class="image">
-                            <a href="#/fresh/{{store.id}}"></a>
-                            <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}"
-                                 alt="{{store.name}}">
-                            <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
-                        </div>
-                        <!-- /.image -->
-                        <div class="title">
-                            <h3><a href="#/fresh/{{store.id}}">{{store.name}}</a>&nbsp;&nbsp;<span
-                                class="content-stars-rank content-stars-{{store.hot}}"></span></h3>
-                        </div>
-                        <!-- /.title -->
-                        <div class="location">
-                            地区:{{store.town}}<span class="value">&nbsp;&nbsp;电话:{{store.phone}}</span></h5>
-                        </div>
-                        <!-- /.location-->
-                        <div class="feature">
-                            <span class="key">特色:</span>
-                            <span class="value">{{store.feature}}</span>
-                        </div>
-                        <!-- /.feature -->
-                        <div class="pcc">
-                            <div class="inner" ng-if="store.pcc > 0">人均:￥{{store.pcc}}元</div>
-                        </div>
-                        <!-- /.pcc -->
-                    </li>
-                </ul>
-            </div>
-            <!-- /.content -->
-        </div>
-        <!-- /#fresh .carousel -->
     </div>
 </div>
 <div class="bottom-wrapper">
