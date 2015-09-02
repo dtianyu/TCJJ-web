@@ -6,24 +6,24 @@
 
     <link href='http://fonts.useso.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="img/favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap-responsive.css" type="text/css">
     <link rel="stylesheet" href="lib/bootstrap-fileupload/bootstrap-fileupload.css" type="text/css">
     <link rel="stylesheet" href="lib/chosen/chosen.css" type="text/css">
-    <link rel="stylesheet" href="css/camera.css" type="text/css">
-    <link rel="stylesheet" href="js/vendor/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"
+    <link rel="stylesheet" href="lib/camera/camera.css" type="text/css">
+    <link rel="stylesheet" href="lib/jquery-ui-1.10.2.custom/css/ui-lightness/jquery-ui-1.10.2.custom.min.css"
           type="text/css">
     <link rel="stylesheet" href="css/main-blue.css" type="text/css" id="color-variant-default">
     <link rel="stylesheet" href="#" type="text/css" id="color-variant">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
     <script type="text/javascript" src="js/vendor/retina.js"></script>
-    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/vendor/carousel.js"></script>
     <script type="text/javascript" src="js/vendor/gmap3.min.js"></script>
     <script type="text/javascript" src="js/vendor/gmap3.infobox.min.js"></script>
-    <script type="text/javascript" src="js/vendor/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
-    <title>Demo | HTML Template</title>
+    <script type="text/javascript" src="lib/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>
+    <title>Demo | 天巢家具</title>
 </head>
 <body>
 <div id="wrapper-outer">
@@ -75,20 +75,20 @@
                                         <!-- /.logo-wrapper -->
 
                                         <div class="info">
-                                            <div class="site-email">
-                                                <a href="mailto:info@byaviators.com">info@byaviators.com</a>
+                                            <div class="site-phone">
+                                                <span>仇先生 13764719681</span>
                                             </div>
-                                            <!-- /.site-email -->
+                                            <!-- /.site-phone -->
 
                                             <div class="site-phone">
-                                                <span>333-666-777</span>
+                                                <span>邬女士 18916728709</span>
                                             </div>
                                             <!-- /.site-phone -->
                                         </div>
                                         <!-- /.info -->
 
                                         <a class="btn btn-primary btn-large list-your-property arrow-right"
-                                           href="list-your-property.html">List your property</a>
+                                           href="list-your-property.html">留言</a>
                                     </div>
                                     <!-- /.row -->
                                 </div>
@@ -112,10 +112,25 @@
 
                             <ul class="nav">
                                 <li><a href="#/index">Home</a></li>
-                                <li><a href="#/cate">美食外卖</a></li>
-                                <li><a href="#/help">同城服务</a></li>
-                                <li><a href="#/training">教育培训</a></li>
-                                <li><a href="#/fresh">生鲜水果</a></li>
+                                <li class="menuparent">
+                                    <span class="menuparent nolink">产品展示</span>
+                                    <ul>
+                                        <li><a href="#/livingroom">客厅系列</a></li>
+                                        <li><a href="#">餐厅系列</a></li>
+                                        <li><a href="#">卧室系列</a></li>
+                                        <li><a href="#">书房系列</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menuparent">
+                                    <span class="menuparent nolink">风格展示</span>
+                                    <ul>
+                                        <li><a href="#/elegant">古朴典雅</a></li>
+                                        <li><a href="#/classic">欧美经典</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">家具板材</a></li>
+                                <li><a href="#">红木知识</a></li>
+                                <li><a href="#/about">联系我们</a></li>
                             </ul>
                             <!-- /.nav -->
                             <form method="get" class="site-search"
@@ -150,6 +165,7 @@
                     <div class="row">
                         <div class="span12 copyright text-center">
                             <p>©2015 天巢家具 All rights reserved.</p>
+                            <p>上海市金山区朱泾金龙新街371号4楼 天巢家具 世纪联华斜对面</p>
                             <!-- /.copyright -->
                         </div>
                         <!-- /.span12 -->
@@ -166,74 +182,6 @@
 </div>
 <!-- /#wrapper-outer -->
 
-<div class="palette">
-    <div class="toggle">
-        <a href="#">Toggle</a>
-    </div>
-    <!-- /.toggle -->
-
-    <div class="inner">
-        <div class="headers">
-            <h2>Header styles</h2>
-            <ul>
-                <li><a class="header-light">Light</a></li>
-                <li><a class="header-normal">Normal</a></li>
-                <li><a class="header-dark">Dark</a></li>
-            </ul>
-        </div>
-        <!-- /.headers -->
-
-        <div class="patterns">
-            <h2>Background patterns</h2>
-            <ul>
-                <li><a class="pattern-cloth-alike">cloth-alike</a></li>
-                <li><a class="pattern-corrugation">corrugation</a></li>
-                <li><a class="pattern-diagonal-noise">diagonal-noise</a></li>
-                <li><a class="pattern-dust">dust</a></li>
-                <li><a class="pattern-fabric-plaid">fabric-plaid</a></li>
-                <li><a class="pattern-farmer">farmer</a></li>
-                <li><a class="pattern-grid-noise">grid-noise</a></li>
-                <li><a class="pattern-lghtmesh">lghtmesh</a></li>
-                <li><a class="pattern-pw-maze-white">pw-maze-white</a></li>
-                <li><a class="pattern-none">none</a></li>
-            </ul>
-        </div>
-
-        <div class="colors">
-            <h2>Color variants</h2>
-            <ul>
-                <li><a href="css/realia-red.css" class="red">Red</a></li>
-                <li><a href="css/realia-magenta.css" class="magenta">Magenta</a></li>
-                <li><a href="css/hijs-brown.css" class="brown">Brown</a></li>
-                <li><a href="css/realia-orange.css" class="orange">Orange</a></li>
-                <li><a href="css/main-brown-dark.css" class="brown-dark">Brown dark</a></li>
-
-                <li><a href="css/realia-gray-red.css" class="gray-red">Gray Red</a></li>
-                <li><a href="css/realia-gray-magenta.css" class="gray-magenta">Gray Magenta</a></li>
-                <li><a href="css/main-gray-brown.css" class="gray-brown">Gray Brown</a></li>
-                <li><a href="css/realia-gray-orange.css" class="gray-orange">Gray Orange</a></li>
-                <li><a href="css/main-gray-brown-dark.css" class="gray-brown-dark">Gray Brown dark</a></li>
-
-                <li><a href="css/realia-green-light.css" class="green-light">Green light</a></li>
-                <li><a href="css/realia-green.css" class="green">Green</a></li>
-                <li><a href="css/realia-turquiose.css" class="turquiose">Turquiose</a></li>
-                <li><a href="css/hijs-blue.css" class="blue">Blue</a></li>
-                <li><a href="css/realia-violet.css" class="violet">Violet</a></li>
-
-                <li><a href="css/realia-gray-green-light.css" class="gray-green-light">Gray Green light</a></li>
-                <li><a href="css/main-gray-green.css" class="gray-green">Gray Green</a></li>
-                <li><a href="css/realia-gray-turquiose.css" class="gray-turquiose">Gray Turquiose</a></li>
-                <li><a href="css/main-gray-blue.css" class="gray-blue">Gray Blue</a></li>
-                <li><a href="css/realia-gray-violet.css" class="gray-violet">Gray Violet</a></li>
-            </ul>
-        </div>
-        <!-- /.colors -->
-
-        <a href="#" class="btn btn-primary reset">Reset default</a>
-    </div>
-    <!-- /.inner -->
-</div>
-<!-- /.palette -->
 <!--百度站内搜索JS脚本-->
 <script type="text/javascript">(function () {
     document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
@@ -251,7 +199,7 @@
 <script type="text/javascript" src="js/vendor/jquery/jquery.cookie.js"></script>
 <script type="text/javascript" src="//cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 <script type="text/javascript" src="lib/chosen/chosen.jquery.min.js"></script>
-<script type="text/javascript" src="js/vendor/camera.min.js"></script>
+<script type="text/javascript" src="lib/camera/camera.min.js"></script>
 <script type="text/javascript" src="lib/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 <script type="text/javascript" src="js/vendor/angular-1.1.5/angular.js"></script>
 <script type="text/javascript" src="js/vendor/angular-1.1.5/angular-resource.js"></script>
