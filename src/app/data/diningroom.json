@@ -1,0 +1,24 @@
+
+[
+    {
+        "id":3,
+        "categoryid":2,
+        "category":"餐厅",
+        "typeid":1,
+        "type":"尊贵红木",
+        "propertyid":3,
+        "property":"黄花梨",
+        "kindid":null,
+        "kind":null,
+        "itemno":"",
+        "itemdesc":"东方神韵圆台",
+        "itemspec":"",
+        "brand":"",
+        "batch":"",
+        "sn":"",
+        "unit":"套",
+        "price":0,
+        "logo1":"",
+        "logo2":"37_0.jpg"
+    }
+]

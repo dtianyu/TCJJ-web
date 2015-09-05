@@ -85,12 +85,4 @@ appDirectives.directive("showTab",
                 element.qrcode({width: 200, height: 200, text: window.location.href});
             }
         };
-    }).directive("carousel", function () {
-        return {
-            link: function (scope, element, attrs) {
-                $("#myCarousel").carousel({
-                    wrap:true
-                });
-            }
-        };
     })

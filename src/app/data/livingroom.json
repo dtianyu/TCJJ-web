@@ -1,0 +1,45 @@
+
+[
+    {
+        "id":1,
+        "categoryid":1,
+        "category":"客厅",
+        "typeid":1,
+        "type":"尊贵红木",
+        "propertyid":3,
+        "property":"黄花梨",
+        "kindid":null,
+        "kind":null,
+        "itemno":"",
+        "itemdesc":"东方神韵沙发十件套",
+        "itemspec":"",
+        "brand":"",
+        "batch":"",
+        "sn":"",
+        "unit":"套",
+        "price":0.00,
+        "logo1":"",
+        "logo2":"34_0.jpg"
+    },
+    {
+        "id":4,
+        "categoryid":1,
+        "category":"客厅",
+        "typeid":1,
+        "type":"尊贵红木",
+        "propertyid":3,
+        "property":"黄花梨",
+        "kindid":null,
+        "kind":null,
+        "itemno":"",
+        "itemdesc":"名尚沙发十件套",
+        "itemspec":"",
+        "brand":"",
+        "batch":"",
+        "sn":"",
+        "unit":"套",
+        "price":0,
+        "logo1":"",
+        "logo2":"58_0.jpg"
+    }
+]

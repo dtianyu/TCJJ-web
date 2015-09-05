@@ -39,135 +39,13 @@
                         </div>
                         <!-- /.images -->
                         <div class="span3">
-                            <div class="property-filter">
+                            <div class="property-filter" style="height: 411px;">
                                 <div class="content">
-                                    <form method="get" action="?">
-                                        <div class="location control-group">
-                                            <label class="control-label" for="inputLocation">
-                                                Location
-                                            </label>
-
-                                            <div class="controls">
-                                                <select id="inputLocation">
-                                                    <option id="malibu">Malibu, CA</option>
-                                                    <option id="palo-alto">Palo Alto, CA</option>
-                                                </select>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="type control-group">
-                                            <label class="control-label" for="inputType">
-                                                Type
-                                            </label>
-
-                                            <div class="controls">
-                                                <select id="inputType">
-                                                    <option id="apartment">Apartment</option>
-                                                    <option id="condo">Condo</option>
-                                                </select>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="beds control-group">
-                                            <label class="control-label" for="inputBeds">
-                                                Beds
-                                            </label>
-
-                                            <div class="controls">
-                                                <select id="inputBeds">
-                                                    <option id="1">1</option>
-                                                    <option id="2">2</option>
-                                                </select>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="baths control-group">
-                                            <label class="control-label" for="inputBaths">
-                                                Baths
-                                            </label>
-
-                                            <div class="controls">
-                                                <select id="inputBaths">
-                                                    <option id="11">1</option>
-                                                    <option id="22">2</option>
-                                                </select>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-
-                                        <div class="rent control-group">
-                                            <div class="controls">
-                                                <label class="checkbox" for="inputRent">
-                                                    <input type="checkbox" id="inputRent"> Rent
-                                                </label>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="sale control-group">
-                                            <div class="controls">
-                                                <label class="checkbox" for="inputSale">
-                                                    <input type="checkbox" id="inputSale"> Sale
-                                                </label>
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="price-from control-group">
-                                            <label class="control-label" for="inputPriceFrom">
-                                                Price from
-                                            </label>
-
-                                            <div class="controls">
-                                                <input type="text" id="inputPriceFrom" name="inputPriceFrom">
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="price-to control-group">
-                                            <label class="control-label" for="inputPriceTo">
-                                                Price to
-                                            </label>
-
-                                            <div class="controls">
-                                                <input type="text" id="inputPriceTo" name="inputPriceTo">
-                                            </div>
-                                            <!-- /.controls -->
-                                        </div>
-                                        <!-- /.control-group -->
-
-                                        <div class="price-value">
-                                            <span class="from"></span><!-- /.from -->
-                                            -
-                                            <span class="to"></span><!-- /.to -->
-                                        </div>
-                                        <!-- /.price-value -->
-
-                                        <div class="price-slider">
-                                        </div>
-                                        <!-- /.price-slider -->
-
-                                        <div class="form-actions">
-                                            <input type="submit" value="Filter now!" class="btn btn-primary btn-large">
-                                        </div>
-                                        <!-- /.form-actions -->
-                                    </form>
+                                    <img src="./app/img/home_a1.png" height="100%" width="100%">
                                 </div>
                                 <!-- /.content -->
                             </div>
                             <!-- /.property-filter -->
-
                         </div>
                         <!-- /.span3 -->
                     </div>
@@ -184,31 +62,30 @@
 
                 <div class="properties-grid">
                     <div class="row">
-                        <div class="property span3" ng-repeat="store in catestores">
+                        <div class="property span3" ng-repeat="item in favoriteitems">
                             <div class="image">
-                                <a href="#/{{store.classname}}/{{store.id}}"></a>
-                                <img ng-if="store.logo2" ng-src="app/img/{{store.userid}}/{{store.logo2}}"
-                                     alt="{{store.name}}">
-                                <img ng-if="!store.logo2" ng-src="app/img/{{store.category}}.png" alt="{{store.name}}">
+                                <a href="#/product/{{item.classname}}"></a>
+                                <img ng-if="item.logo2" ng-src="app/img/{{item.logo2}}"
+                                     alt="{{item.itemdesc}}">
+                                <img ng-if="!item.logo2" ng-src="img/tmp/property-small-1.png" alt="{{item.itemdesc}}">
                                 <!-- /.content -->
-                                <div class="price">
-                                    人均:￥{{store.pcc}}元
+                                <div ng-if="item.price > 0" class="price">
+                                    售价:￥{{item.price}}元
                                 </div>
                                 <!-- /.price -->
                             </div>
                             <!-- /.image -->
                             <div class="title">
-                                <h2><a href="#/{{store.classname}}/{{store.id}}">{{store.name}}</a>&nbsp;&nbsp;<span
-                                    class="content-stars-rank content-stars-{{store.hot}}"></span></h2>
+                                <h2><a href="#/{{item.classname}}">{{item.itemdesc}}</a></h2>
                             </div>
                             <!-- /.title -->
                             <div class="location">
-                                地区:{{store.town}}<span class="value">&nbsp;&nbsp;电话:{{store.phone}}</span></h5>
+                                位置:{{item.category}}<span class="value">&nbsp;&nbsp;尺寸:{{item.itemspec}}</span></h5>
                             </div>
                             <!-- /.location-->
                             <div class="feature">
-                                <span class="key">特色:</span>
-                                <span class="value">{{store.feature}}</span>
+                                <span class="key">材质:</span>
+                                <span class="value">{{item.type}}&nbsp;&nbsp;{{item.property}}</span>
                             </div>
                             <!-- /.feature -->
                         </div>
@@ -227,97 +104,31 @@
                         <!-- /.title -->
 
                         <div class="content">
-                            <div class="property">
+                            <div class="property" ng-repeat="item in newestitems">
                                 <div class="image">
-                                    <a href="detail.html"></a>
-                                    <img src="img/tmp/property-small-4.png" alt="">
+                                    <a href="#/product/{{item.classname}}"></a>
+                                    <img ng-if="item.logo2" ng-src="app/img/{{item.logo2}}"
+                                         alt="{{item.name}}">
+                                    <img ng-if="!item.logo2" ng-src="img/tmp/property-small-4.png" alt="{{item.name}}">
                                 </div>
                                 <!-- /.image -->
 
                                 <div class="wrapper">
                                     <div class="title">
                                         <h3>
-                                            <a href="detail.html">27523 Pacific Coast</a>
+                                            <a>{{item.itemdesc}}</a>
                                         </h3>
                                     </div>
                                     <!-- /.title -->
-                                    <div class="location">Palo Alto CA</div>
+                                    <div class="location">{{item.type}}</div>
                                     <!-- /.location -->
-                                    <div class="price">€2 300 000</div>
+                                    <div class="price">{{item.property}}</div>
                                     <!-- /.price -->
                                 </div>
                                 <!-- /.wrapper -->
                             </div>
                             <!-- /.property -->
 
-                            <div class="property">
-                                <div class="image">
-                                    <a href="detail.html"></a>
-                                    <img src="img/tmp/property-small-5.png" alt="">
-                                </div>
-                                <!-- /.image -->
-
-                                <div class="wrapper">
-                                    <div class="title">
-                                        <h3>
-                                            <a href="detail.html">27523 Pacific Coast</a>
-                                        </h3>
-                                    </div>
-                                    <!-- /.title -->
-                                    <div class="location">Palo Alto CA</div>
-                                    <!-- /.location -->
-                                    <div class="price">€2 300 000</div>
-                                    <!-- /.price -->
-                                </div>
-                                <!-- /.wrapper -->
-                            </div>
-                            <!-- /.property -->
-
-                            <div class="property">
-                                <div class="image">
-                                    <a href="detail.html"></a>
-                                    <img src="img/tmp/property-small-6.png" alt="">
-                                </div>
-                                <!-- /.image -->
-
-                                <div class="wrapper">
-                                    <div class="title">
-                                        <h3>
-                                            <a href="detail.html">27523 Pacific Coast</a>
-                                        </h3>
-                                    </div>
-                                    <!-- /.title -->
-                                    <div class="location">Palo Alto CA</div>
-                                    <!-- /.location -->
-                                    <div class="price">€2 300 000</div>
-                                    <!-- /.price -->
-                                </div>
-                                <!-- /.wrapper -->
-                            </div>
-                            <!-- /.property -->
-
-                            <div class="property">
-                                <div class="image">
-                                    <a href="detail.html"></a>
-                                    <img src="img/tmp/property-small-2.png" alt="">
-                                </div>
-                                <!-- /.image -->
-
-                                <div class="wrapper">
-                                    <div class="title">
-                                        <h3>
-                                            <a href="detail.html">27523 Pacific Coast</a>
-                                        </h3>
-                                    </div>
-                                    <!-- /.title -->
-                                    <div class="location">Palo Alto CA</div>
-                                    <!-- /.location -->
-                                    <div class="price">€2 300 000</div>
-                                    <!-- /.price -->
-                                </div>
-                                <!-- /.wrapper -->
-                            </div>
-                            <!-- /.property -->
                         </div>
                         <!-- /.content -->
                     </div>
@@ -333,13 +144,13 @@
         <div class="bottom-inner row">
             <div class="item span4">
                 <div class="address decoration"></div>
-                <a href="#" class="btn btn-primary">前往天巢</a>
+                <a href="#/about" class="btn btn-primary">地理位置</a>
             </div>
             <!-- /.item -->
 
             <div class="item span4">
                 <div class="gps decoration"></div>
-                <a href="#" class="btn btn-primary">前往天巢</a>
+                <a href="#/about" class="btn btn-primary">前往天巢</a>
             </div>
             <!-- /.item -->
 

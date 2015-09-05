@@ -1,0 +1,137 @@
+<!-- CONTENT -->
+<div id="content">
+    <div class="container">
+        <div id="main">
+            <div class="row">
+                <div class="span9">
+
+                    <h2>上海市金山区朱泾镇金龙新街371号4楼 世纪联华斜对面</h2>
+
+                    <div id="property-map" style="height: 570px"></div>
+                    <!-- /#property-map -->
+                    <script>
+                        var map = new AMap.Map('property-map', {
+                            // 设置中心点
+                            center: [121.173058, 30.886154],
+                            // 设置缩放级别
+                            zoom: 18
+                        });
+                        map.plugin(["AMap.ToolBar"], function () {
+                            //加载工具条
+                            var tool = new AMap.ToolBar();
+                            map.addControl(tool);
+                        });
+                        map.plugin(["AMap.MapType"], function () {
+                            //地图类型切换
+                            var type = new AMap.MapType({
+                                defaultType: 0 //使用2D地图
+                            });
+                            map.addControl(type);
+                        });
+                    </script>
+                </div>
+
+                <div class="sidebar span3">
+                    <div class="widget our-agents">
+                        <div class="title">
+                            <h2>销售热线</h2>
+                        </div>
+                        <!-- /.title -->
+
+                        <div class="content">
+                            <div class="agent">
+                                <div class="image">
+                                    <img src="img/photos/emma-small.png" alt="">
+                                </div>
+                                <!-- /.image -->
+                                <div class="name">仇先生</div>
+                                <!-- /.name -->
+                                <div class="phone">137-6471-9681</div>
+                                <!-- /.phone -->
+                                <div class="email"><a href="#">&nbsp;</a>
+                                </div>
+                                <!-- /.email -->
+                            </div>
+                            <!-- /.agent -->
+
+                            <div class="agent">
+                                <div class="image">
+                                    <img src="img/photos/john-small.png" alt="">
+                                </div>
+                                <!-- /.image -->
+                                <div class="name">邬女士</div>
+                                <!-- /.name -->
+                                <div class="phone">189-1672-8709</div>
+                                <!-- /.phone -->
+                                <div class="email"><a href="#">&nbsp</a>
+                                </div>
+                                <!-- /.email -->
+                            </div>
+                            <!-- /.agent -->
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.our-agents -->
+                    <div class="widget contact">
+                        <div class="title">
+                            <h2 class="block-title">留言</h2>
+                        </div>
+                        <!-- /.title -->
+
+                        <div class="content">
+                            <form method="post">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputName">
+                                        姓名
+                                        <span class="form-required" title="This field is required.">*</span>
+                                    </label>
+
+                                    <div class="controls">
+                                        <input type="text" id="inputName">
+                                    </div>
+                                    <!-- /.controls -->
+                                </div>
+                                <!-- /.control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">
+                                        手机
+                                        <span class="form-required" title="This field is required.">*</span>
+                                    </label>
+
+                                    <div class="controls">
+                                        <input type="text" id="inputEmail">
+                                    </div>
+                                    <!-- /.controls -->
+                                </div>
+                                <!-- /.control-group -->
+
+                                <div class="control-group">
+                                    <label class="control-label" for="inputMessage">
+                                        内容
+                                        <span class="form-required" title="This field is required.">*</span>
+                                    </label>
+
+                                    <div class="controls">
+                                        <textarea id="inputMessage"></textarea>
+                                    </div>
+                                    <!-- /.controls -->
+                                </div>
+                                <!-- /.control-group -->
+
+                                <div class="form-actions">
+                                    <input type="submit" class="btn btn-primary arrow-right" value="Send">
+                                </div>
+                                <!-- /.form-actions -->
+                            </form>
+                        </div>
+                        <!-- /.content -->
+                    </div>
+                    <!-- /.widget -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /#content -->
+

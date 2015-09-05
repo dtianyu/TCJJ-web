@@ -1,0 +1,129 @@
+<!-- CONTENT -->
+<div class="container">
+    <div id="main">
+        <div class="row">
+            <div class="span9">
+
+                <div class="properties-rows">
+                    <div class="filter" ng-controller="FilterController" style="margin-bottom: 20px;">
+                        <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                            <ul>
+                                <li class="title"><a class="text-primary">材质</a></li>
+                                <li ng-repeat="f in property">
+                                    <a ng-click="addFilterProperty(f.name);">{{f.name}}<span
+                                        class="text-info"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                            <ul>
+                                <li class="title"><a class="text-primary">风格</a></li>
+                                <li ng-repeat="f in kind">
+                                    <a ng-click="addFilterKind(f.name);">{{f.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row" style=" padding-top: 5px;padding-bottom: 5px;">
+                            <ul>
+                                <li class="title"><a class="text-primary">已筛选</a></li>
+                                <li ng-repeat="f in doFilter.filters">
+                                    <a class="filters" ng-click="removeFilter(f);">{{f.value}}<i></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.filter -->
+                </div>
+                <!-- /.properties-rows -->
+                <div class="properties-grid">
+                    <div class="row">
+                        <div class="property span3" ng-repeat="item in items | filter: doFilter.filterDetail">
+                            <div class="image">
+                                <div class="content">
+                                    <a></a>
+                                    <img ng-if="item.logo2" ng-src="app/img/{{item.logo2}}"
+                                         alt="{{item.itemdesc}}">
+                                    <img ng-if="!item.logo2" ng-src="img/tmp/property-small-1.png"
+                                         alt="{{item.itemdesc}}">
+                                </div>
+                                <!-- /.content -->
+                            </div>
+                            <!-- /.image -->
+                            <div class="title">
+                                <h2><a href="#/{{item.classname}}">{{item.itemdesc}}</a></h2>
+                            </div>
+                            <!-- /.title -->
+                            <div class="location">
+                                <span class="value">尺寸:{{item.itemspec}}</span>
+                            </div>
+                            <!-- /.location -->
+                            <div class="area">
+                                <span class="key">材质:</span>
+                                <span class="value">{{item.type}}&nbsp;&nbsp;{{item.property}}</span>
+                            </div>
+                            <!-- /.area -->
+                            <div class="pcc">
+                                <div class="inner" ng-if="item.pcc > 0">价格:￥{{item.pcc}}元</div>
+                            </div>
+                            <!-- /.pcc -->
+                        </div>
+                        <!-- /.property -->
+                    </div>
+                    <!-- /
+                <!-- /.properties-grid -->
+                </div>
+            </div>
+            <!-- /.properties-rows -->
+            <div class="sidebar span3">
+
+                <div class="property-filter widget">
+                    <div class="content" ng-controller="FilterController">
+                        <form method="get" action="?">
+                            <div class="location control-group">
+                                <label class="control-label" for="inputProperty">
+                                    材质
+                                </label>
+
+                                <div class="controls">
+                                    <select id="inputProperty" ng-model="doFilter.filterDetail.property">
+                                        <option value="">全部</option>
+                                        <option ng-repeat="f in property">{{f.name}}</option>
+                                    </select>
+                                </div>
+                                <!-- /.controls -->
+                            </div>
+                            <!-- /.control-group -->
+
+                            <div class="type control-group">
+                                <label class="control-label" for="inputKind">
+                                    风格
+                                </label>
+
+                                <div class="controls">
+                                    <select id="inputKind" ng-model="doFilter.filterDetail.kind">
+                                        <option value="">全部</option>
+                                        <option ng-repeat="c in kind">{{c.category}}</option>
+                                    </select>
+                                </div>
+                                <!-- /.controls -->
+                            </div>
+                            <!-- /.control-group -->
+
+                            <div class="form-actions">
+                                <input type="reset" value="Reset!" class="btn btn-primary btn-large"
+                                       ng-click="resetFilter();">
+                            </div>
+                            <!-- /.form-actions -->
+                        </form>
+                    </div>
+                    <!-- /.content -->
+                </div>
+                <!-- /.property-filter -->
+                <div class="hidden-xs">
+                    <div qrcode class="text-center"></div>
+                </div>
+                <!-- /qrcode -->
+            </div>
+        </div>
+    </div>
+</div>
