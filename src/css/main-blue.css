@@ -652,6 +652,22 @@ iframe.map {
     padding-left: 30px
 }
 
+#header-wrapper #header #header-inner .navbar .navbar-inner .site-address {
+    float: none;
+    line-height: 30px
+}
+
+#header-wrapper #header #header-inner .navbar .navbar-inner .site-address span {
+    /*background-image: url("../img/icons/phone-gray.png");*/
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    color: #707070;
+    font-size: 18px;
+    font-weight: 500;
+    padding-left: 30px
+}
+
 #header-wrapper #header #header-inner .navbar .navbar-inner .site-email {
     float: none;
     line-height: 30px
@@ -696,6 +712,12 @@ iframe.map {
         margin-left: 40px
     }
 
+    #header-wrapper #header #header-inner .navbar .navbar-inner .site-address {
+        float: left;
+        line-height: 90px;
+        margin-left: 40px
+    }
+
     #header-wrapper #header #header-inner .navbar .navbar-inner .site-email {
         float: left;
         line-height: 90px;
@@ -717,6 +739,18 @@ iframe.map {
     }
 
     #header-wrapper #header #header-inner .navbar .navbar-inner .site-phone span {
+        font-size: 16px;
+        padding-top: 1px;
+        padding-bottom: 1px
+    }
+
+    #header-wrapper #header #header-inner .navbar .navbar-inner .site-address {
+        float: none;
+        line-height: 30px;
+        margin-left: 0px
+    }
+
+    #header-wrapper #header #header-inner .navbar .navbar-inner .site-address span {
         font-size: 16px;
         padding-top: 1px;
         padding-bottom: 1px

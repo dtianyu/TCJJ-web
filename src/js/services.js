@@ -30,6 +30,11 @@ appServices.factory('Area', function ($resource) {
             }
         };
     })
+    .factory('Category',function($resource){
+        return $resource("app/data/:Id.json", {}, {
+            query: {method: 'GET', params: {Id: 'category'}, isArray: true}
+        });
+    })
     .factory('Property', function ($resource) {
         return $resource("app/data/:Id.json", {}, {
             query: {method: 'GET', params: {Id: 'property'}, isArray: true}
@@ -38,6 +43,11 @@ appServices.factory('Area', function ($resource) {
     .factory('Kind', function ($resource) {
         return $resource("app/data/:Id.json", {}, {
             query: {method: 'GET', params: {Id: 'kind'}, isArray: true}
+        });
+    })
+    .factory('Type', function ($resource) {
+        return $resource("app/data/:Id.json", {}, {
+            query: {method: 'GET', params: {Id: 'type'}, isArray: true}
         });
     })
     .factory('Favorite', function ($resource) {

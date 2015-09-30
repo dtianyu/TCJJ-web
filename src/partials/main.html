@@ -64,7 +64,7 @@
                     <div class="row">
                         <div class="property span3" ng-repeat="item in favoriteitems">
                             <div class="image">
-                                <a href="#/product/{{item.classname}}"></a>
+                                <a href="#/product/{{item.categoryclass}}"></a>
                                 <img ng-if="item.logo2" ng-src="app/img/{{item.logo2}}"
                                      alt="{{item.itemdesc}}">
                                 <img ng-if="!item.logo2" ng-src="img/tmp/property-small-1.png" alt="{{item.itemdesc}}">
@@ -76,7 +76,7 @@
                             </div>
                             <!-- /.image -->
                             <div class="title">
-                                <h2><a href="#/{{item.classname}}">{{item.itemdesc}}</a></h2>
+                                <h2><a href="#/product/{{item.categoryclass}}">{{item.itemdesc}}</a></h2>
                             </div>
                             <!-- /.title -->
                             <div class="location">
@@ -144,13 +144,13 @@
         <div class="bottom-inner row">
             <div class="item span4">
                 <div class="address decoration"></div>
-                <a href="#/about" class="btn btn-primary">地理位置</a>
+                <a href="#/contact" class="btn btn-primary">地理位置</a>
             </div>
             <!-- /.item -->
 
             <div class="item span4">
                 <div class="gps decoration"></div>
-                <a href="#/about" class="btn btn-primary">前往天巢</a>
+                <a href="#/contact" class="btn btn-primary">前往天巢</a>
             </div>
             <!-- /.item -->
 

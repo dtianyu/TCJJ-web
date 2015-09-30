@@ -17,6 +17,13 @@ var CartController = ['$scope', 'Cart', function ($scope, Cart) {
     };
 }];
 
+
+var MenuController = ['$scope', 'Category', 'Kind', 'Type', function ($scope, Category, Kind, Type) {
+    $scope.category = Category.query();
+    $scope.kind = Kind.query();
+    $scope.type = Type.query();
+}];
+
 var FilterController = ['$scope', 'Filter', 'Property', 'Kind', function ($scope, Filter, Property, Kind) {
     $scope.property = Property.query();
     $scope.kind = Kind.query();

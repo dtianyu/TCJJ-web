@@ -40,7 +40,7 @@
                         <div class="property span3" ng-repeat="item in items | filter: doFilter.filterDetail">
                             <div class="image">
                                 <div class="content">
-                                    <a></a>
+                                    <a rel="group" ti href="app/img/{{item.logo2}}" fancybox></a>
                                     <img ng-if="item.logo2" ng-src="app/img/{{item.logo2}}"
                                          alt="{{item.itemdesc}}">
                                     <img ng-if="!item.logo2" ng-src="img/tmp/property-small-1.png"
@@ -50,7 +50,7 @@
                             </div>
                             <!-- /.image -->
                             <div class="title">
-                                <h2><a href="#/{{item.classname}}">{{item.itemdesc}}</a></h2>
+                                <h2><a href="#/product/{{item.categoryclass}}">{{item.itemdesc}}</a></h2>
                             </div>
                             <!-- /.title -->
                             <div class="location">
@@ -102,7 +102,7 @@
                                 <div class="controls">
                                     <select id="inputKind" ng-model="doFilter.filterDetail.kind">
                                         <option value="">全部</option>
-                                        <option ng-repeat="c in kind">{{c.category}}</option>
+                                        <option ng-repeat="c in kind">{{c.name}}</option>
                                     </select>
                                 </div>
                                 <!-- /.controls -->

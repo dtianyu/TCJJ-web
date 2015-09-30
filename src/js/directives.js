@@ -85,4 +85,10 @@ appDirectives.directive("showTab",
                 element.qrcode({width: 200, height: 200, text: window.location.href});
             }
         };
+    }).directive("fancybox", function () {
+        return {
+            link: function (scope, element, attrs) {
+                element.fancybox({autoCenter:true,closeClick:true,autoSize:false,minWidth:540,minHeight:360});
+            }
+        };
     })
